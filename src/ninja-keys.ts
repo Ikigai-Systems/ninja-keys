@@ -104,6 +104,7 @@ export class NinjaKeys extends LitElement {
       this._selected = this._actionMatches[0];
     }
     this.setParent(options.parent);
+    hotkeys.setScope("commandPaletteIsOpened");
   }
 
   /**
@@ -112,6 +113,7 @@ export class NinjaKeys extends LitElement {
   close() {
     this._bump = false;
     this.visible = false;
+    hotkeys.setScope("commandPaletteIsClosed");
   }
 
   /**
@@ -182,6 +184,7 @@ export class NinjaKeys extends LitElement {
     }
 
     this._registerInternalHotkeys();
+    hotkeys.setScope("commandPaletteIsClosed");
   }
 
   override disconnectedCallback() {
@@ -223,7 +226,7 @@ export class NinjaKeys extends LitElement {
       this._flatData
         .filter((action) => !!action.hotkey)
         .forEach((action) => {
-          hotkeys(action.hotkey!, (event) => {
+          hotkeys(action.hotkey!, "commandPaletteIsClosed", (event) => {
             event.preventDefault();
             if (action.handler) {
               action.handler(action);
