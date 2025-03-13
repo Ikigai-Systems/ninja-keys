@@ -99,7 +99,7 @@ export class NinjaKeys extends LitElement {
   open(options: {parent?: string} = {}) {
     this._bump = true;
     this.visible = true;
-    this._headerRef.value!.focusSearch();
+    this._headerRef.value?.focusSearch();
     if (this._actionMatches.length > 0) {
       this._selected = this._actionMatches[0];
     }
@@ -129,7 +129,7 @@ export class NinjaKeys extends LitElement {
     }
     this._selected = undefined;
     this._search = '';
-    this._headerRef.value!.setSearch('');
+    this._headerRef.value?.setSearch('');
   }
 
   /**
