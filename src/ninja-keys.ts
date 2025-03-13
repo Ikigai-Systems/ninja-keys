@@ -189,6 +189,7 @@ export class NinjaKeys extends LitElement {
 
   override disconnectedCallback() {
     super.disconnectedCallback();
+    hotkeys.deleteScope("commandPaletteIsClosed");
     this._unregisterInternalHotkeys();
   }
 
