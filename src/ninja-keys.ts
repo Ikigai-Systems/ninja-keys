@@ -221,6 +221,8 @@ export class NinjaKeys extends LitElement {
 
   override update(changedProperties: PropertyValues<this>) {
     if (changedProperties.has('data') && !this.disableHotkeys) {
+      hotkeys.deleteScope("commandPaletteIsClosed", hotkeys.getScope());
+
       this._flatData = this._flattern(this.data);
 
       this._flatData

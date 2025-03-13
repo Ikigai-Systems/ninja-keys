@@ -59,7 +59,7 @@
   },
   "dependencies": {
     "@material/mwc-icon": "0.25.3",
-    "hotkeys-js": "3.8.7",
+    "hotkeys-js": "3.9.1",
     "lit": "2.2.6"
   },
   "devDependencies": {
