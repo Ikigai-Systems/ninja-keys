@@ -37,10 +37,10 @@ export class NinjaAction extends LitElement {
     .ninja-icon {
       font-size: var(--ninja-icon-size);
       max-width: var(--ninja-icon-size);
+      min-width: var(--ninja-icon-size);
       max-height: var(--ninja-icon-size);
       margin-right: 1em;
       color: var(--ninja-icon-color);
-      margin-right: 1em;
       position: relative;
     }
 
