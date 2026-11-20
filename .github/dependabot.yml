@@ -11,3 +11,23 @@ updates:
     groups:
       npm-minor-patch:
         update-types: ["minor", "patch"]
+      # Without applies-to a group only covers version updates, so security
+      # updates would keep arriving one package at a time.
+      npm-security:
+        applies-to: security-updates
+        patterns: ["*"]
+
+  # docs/ is the demo-CSS project (tailwind, postcss, cssnano) with its own lockfile.
+  - package-ecosystem: npm
+    commit-message:
+      prefix: deps
+    directory: "/docs"
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 5
+    groups:
+      docs-minor-patch:
+        update-types: ["minor", "patch"]
+      docs-security:
+        applies-to: security-updates
+        patterns: ["*"]
